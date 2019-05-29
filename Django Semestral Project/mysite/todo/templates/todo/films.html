@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Filmy</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'todo/images/icon.ico' %}">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="{% static 'todo/test.css' %}">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'todo:index' %}">MY LIBARY</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'todo:films' %}">Filmy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'todo:actors' %}">Herci</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'todo:chart' %}">Rebríček</a>
+              </li>
+              
+              {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'todo:logout' %}">Logout</a>
+            </li>
+            {% else %}
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'todo:login' %}">Prihlásenie</a>
+              </li>
+            {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <h1 class="my-4">All films</h1>
+      
+      <!-- Marketing Icons Section -->
+      <div class="row">
+        <div class="col-lg-12 mb-12">
+          <div class="card h-100">
+            <h4 class="card-header">All films</h4>
+            {% for film in film %}
+            <div class="card-body list-body">
+              <a href="{% url 'todo:film' film.id %}" class="card-text">{{forloop.counter}}. {{film}}</a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+    </div>
+        
+      <!-- /.row -->
+
+      <hr>
+
+      <!-- Call to Action Section -->
+      <div class="row mb-4">
+        <div class="col-md-8">
+          <p>Ak chceš o nás zistiť viac určite zmáčkni toto tlačítko.V prípade záujmu sa nás neboj kontaktovať. Tešíme sa na teba.</p>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-lg btn-secondary btn-block" href="{% url 'todo:about' %}">About us</a>
+        </div>
+      </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; MyLIBARY 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+</body>
+
+</html>

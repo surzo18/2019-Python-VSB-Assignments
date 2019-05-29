@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h3>Web applications & Django</h3>
+      </section>
+      <section>
+        <section>
+          <h4>Web server/framework/application</h4>
+          <p class="fragment">"Web application is (written using a web framework and) deployed on a web server</p>
+        </section>
+        <section>
+          <h4>Web server</h4>
+          <ul>
+            <li class="fragment">Handles low-level network stuff</li>
+            <li class="fragment">TCP/IP connection handling</li>
+            <li class="fragment">SSL/TLS encryption</li>
+            <li class="fragment">Serving static files</li>
+            <li class="fragment">Basic routing</li>
+            <li class="fragment">Apache, nginx, IIS, ...</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Web application</h4>
+          <ul style="font-size:0.8em;">
+            <li class="fragment">Does something in reaction to a HTTP request</li>
+            <li class="fragment">Social network, blog site, e-shop, search engine, database interface, ...</li>
+            <li class="fragment">Written in PHP, Java, C#, Python, Javascript, Ruby, ...</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Web framework</h4>
+          <ul>
+            <li class="fragment">Library and a set of conventions for writing web apps</li>
+            <li class="fragment">HTML templates, database access, user authentication, URL routing,
+              input sanitization, form handling, security, localization, caching, logging, ...</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <h4>Django</h4>
+        <ul style="font-size: 0.8em;">
+          <li class="fragment">Battery-included web framework for Python</li>
+          <li class="fragment">Provides all required web framework functionality</li>
+          <li class="fragment">Automatic admin section generation</li>
+          <li class="fragment">Uses convention over configuration (lot of things are magic)</li>
+        </ul>
+        <p class="fragment">Websites using it:</p>
+        <ul style="font-size: 0.6em;">
+          <li class="fragment">Disqus</li>
+          <li class="fragment">Bitbucket</li>
+          <li class="fragment">Instagram</li>
+          <li class="fragment">Mozilla firefox help &amp; addons</li>
+          <li class="fragment">Pinterest</li>
+          <li class="fragment">NASA</li>
+          <li class="fragment">Washington Post</li>
+          <li class="fragment">...</li>
+        </ul>
+      </section>
+      <section>
+        <div style="font-size: 1em;">
+          <h4>General overview</h4>
+          <div class="fragment">
+            <p>1. Define a Python function that will handle requests</p>
+            <pre><code class="python" data-trim data-noescape>
+              <span class="fragment">def vote(request, question_id):</span>
+                <span class="fragment"># 1) validate if input request is OK</span>
+                <span class="fragment"># 2) access DB, communicate with API, log the request...</span>
+                <span class="fragment"># 3) return some response</span>
+                <span class="fragment">return HttpResponse("Thanks for voting!")</span>
+            </code></pre>
+          </div>
+          <div class="fragment">
+            <p>2. Assign a URL to the function</p>
+            <pre><code class="python" data-trim>
+              path('/vote/&lt;int:question_id&gt;', vote)
+            </code></pre>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
+</body>
+</html>

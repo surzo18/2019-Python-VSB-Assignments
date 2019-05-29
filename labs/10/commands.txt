@@ -1,0 +1,23 @@
+# create project
+manage.py startproject spja
+
+# create app
+manage.py startapp polls
+
+# run development server
+manage.py runserver
+
+# sanity check
+manage.py check
+
+# create DB migrations
+manage.py makemigrations
+
+# show SQL command for a specific migration
+manage.py sqlmigrate polls 0001
+
+# run DB migrations
+manage.py migrate
+
+# create superuser
+manage.py createsuperuser
