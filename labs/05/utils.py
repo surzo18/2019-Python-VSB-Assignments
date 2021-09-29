@@ -1,4 +1,5 @@
 import pygame
+import os
 from pygame.constants import RLEACCEL
 
 image_cache = {}

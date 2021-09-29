@@ -13,7 +13,7 @@ EVENT_SPAWN_ENEMY = pygame.USEREVENT
 class Explosion(pygame.sprite.Sprite):
     def __init__(self, pos):
         super().__init__()
-        self.image = load_image('images/explosion_anim.jpg')
+        self.image = load_image('./Labs/05/images/explosion_anim.jpg')
         self.rect = self.image.get_rect()
         self.rect.center = pos
         self.crop = (64, 64)
@@ -57,7 +57,7 @@ class Explosion(pygame.sprite.Sprite):
 class Missile(pygame.sprite.Sprite):
     def __init__(self, player, pos, damage=20, speed=700):
         pygame.sprite.Sprite.__init__(self)
-        self.image = load_image('images/bullet.gif')
+        self.image = load_image('./Labs/05/images/bullet.gif')
         self.rect = self.image.get_rect()
         self.rect.center = pos
 
@@ -121,9 +121,9 @@ class Player(pygame.sprite.Sprite):
     def __init__(self, engine, pos):
         super().__init__()
 
-        self.image_straight = load_image('images/plane.gif')
-        self.image_left = load_image('images/plane_turning_right_1.gif')
-        self.image_right = load_image('images/plane_turning_left_1.gif')
+        self.image_straight = load_image('./Labs/05/images/plane.gif')
+        self.image_left = load_image('./Labs/05/images/plane_turning_right_1.gif')
+        self.image_right = load_image('./Labs/05/images/plane_turning_left_1.gif')
         self.rect = self.image_straight.get_rect()
         self.rect.center = pos
 
@@ -139,7 +139,7 @@ class Player(pygame.sprite.Sprite):
         self.font = pygame.font.Font(None, 36)
         self.cooldown = Cooldown(150)
 
-        self.explosion_sound = pygame.mixer.Sound('sound/explosion.wav')
+        self.explosion_sound = pygame.mixer.Sound('./Labs/05/sound/explosion.wav')
 
         self.key = {
             K_RIGHT: False,
@@ -300,11 +300,11 @@ class Engine:
 
     def select_enemy_image(self):
         images = (
-            'images/enemy1.gif',
-            'images/enemy2.gif',
-            'images/enemy3.gif',
-            'images/enemy4.gif',
-            'images/enemy5.gif'
+            './Labs/05/images/enemy1.gif',
+            './Labs/05/images/enemy2.gif',
+            './Labs/05/images/enemy3.gif',
+            './Labs/05/images/enemy4.gif',
+            './Labs/05/images/enemy5.gif'
         )
         return load_image(self.random.choice(images))
 

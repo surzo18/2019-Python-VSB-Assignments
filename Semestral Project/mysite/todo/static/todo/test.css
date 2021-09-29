@@ -1,0 +1,82 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+
+ body {
+    padding-top: 54px;
+  }
+  
+  @media (min-width: 992px) {
+    body {
+      padding-top: 56px;
+    }
+  }
+  
+  .carousel-item {
+    height: 65vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  .portfolio-item {
+    margin-bottom: 30px;
+  }
+
+  .list-body{
+    padding:10px 5px;
+    border-bottom:1px solid #6b6666;
+    letter-spacing: 0.1em;
+  }
+
+  .list-body a{
+    color:rgb(92, 16, 16);
+    font-weight: 600;
+  }
+
+  #login-body {
+    background: url('images/login.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+
+  #login-body .navbar-dark{
+    background-color: #000!important;
+  }
+
+  #login-body a{
+    color:#fff!important;
+
+  }
+
+  #login-body a:hover{
+    color:#333!important;
+
+  }
+
+  #login-body #login-form input,
+  #login-body #login-form a {
+    border-radius: 12px;
+    margin-bottom:0.5em;
+
+  }
+
+  #login-body #login-form a:hover{
+    color:#fff!important;
+  }
+
+  .error-list{
+    color:#fff;
+  }
+
+  #id_star{
+    display:inline-block;
+    padding:100px;
+  }
