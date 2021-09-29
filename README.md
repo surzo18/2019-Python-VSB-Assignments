@@ -6,6 +6,12 @@
 
 <br/>
 
+<p align="center">
+  <img src="ReadmeImages/SpaceInvaders.png" />
+</p>
+
+<br/>
+
 ## How to run
 ```
 You have to activate venv enviroment for proper operation.
@@ -28,3 +34,4 @@ You have to activate venv enviroment for proper operation.
 |10    |Django framework|
 |11    |Machine learning|
 |12    |Jupyter notebook|
+
